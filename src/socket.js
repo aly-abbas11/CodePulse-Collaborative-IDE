@@ -1,0 +1,12 @@
+import {io} from 'socket.io-client';
+
+export const initSocket = async () => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    const options = {
+        'force new connection': true,
+        reconnectionAttempt: 'Infinity',
+        timeout: 10000,
+        transports: ['websocket', 'polling'],
+    };
+    return io(backendUrl && backendUrl.trim() ? backendUrl : undefined, options);
+};

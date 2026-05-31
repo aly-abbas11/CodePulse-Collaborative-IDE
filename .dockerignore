@@ -1,0 +1,12 @@
+node_modules
+build
+.git
+.vercel
+.env
+.env.local
+*.log
+npm-debug.log*
+.DS_Store
+coverage
+.cursor
+terminals

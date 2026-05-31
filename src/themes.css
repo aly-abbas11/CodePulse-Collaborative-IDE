@@ -1,0 +1,120 @@
+/* ── CodePulse global theme tokens ── */
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d1117;
+  --bg2: #0a0a0f;
+  --surface: #161b24;
+  --surface2: #1c2130;
+  --surface3: #222936;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(0, 180, 255, 0.45);
+  --cyan: #00b4ff;
+  --cyan-bright: #00e5ff;
+  --cyan-dim: rgba(0, 180, 255, 0.12);
+  --cyan-glow: rgba(0, 180, 255, 0.35);
+  --green: #00e676;
+  --green-dim: rgba(0, 230, 118, 0.12);
+  --green-border: rgba(0, 230, 118, 0.35);
+  --orange: #ff9100;
+  --orange-dim: rgba(255, 145, 0, 0.12);
+  --purple: #b388ff;
+  --purple-dim: rgba(179, 136, 255, 0.12);
+  --red: #ff4757;
+  --yellow: #ffd740;
+  --text: #e8eaf0;
+  --muted: #4a5568;
+  --muted2: #6b7a8d;
+  --nav-bg: rgba(10, 10, 15, 0.72);
+  --overlay: rgba(0, 0, 0, 0.55);
+  --grid-line: rgba(0, 229, 255, 0.025);
+  --grid-glow: rgba(0, 229, 255, 0.06);
+  --card-shadow: rgba(0, 0, 0, 0.35);
+  --card-hover-border: rgba(0, 180, 255, 0.25);
+  --toast-bg: #13131e;
+  --toast-text: #f0f0ff;
+  --toast-border: rgba(255, 255, 255, 0.07);
+  --toggle-track: #1c2130;
+  --toggle-thumb: #00b4ff;
+  --font: 'Syne', sans-serif;
+  --mono: 'Space Mono', monospace;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f0f3f9;
+  --bg2: #e8ecf4;
+  --surface: #ffffff;
+  --surface2: #f8fafc;
+  --surface3: #eef1f7;
+  --border: rgba(0, 0, 0, 0.09);
+  --border-focus: rgba(0, 120, 200, 0.55);
+  --cyan: #0077b6;
+  --cyan-bright: #0096c7;
+  --cyan-dim: rgba(0, 119, 182, 0.1);
+  --cyan-glow: rgba(0, 119, 182, 0.22);
+  --green: #00875a;
+  --green-dim: rgba(0, 135, 90, 0.1);
+  --green-border: rgba(0, 135, 90, 0.35);
+  --orange: #e65100;
+  --orange-dim: rgba(230, 81, 0, 0.1);
+  --purple: #651fff;
+  --purple-dim: rgba(101, 31, 255, 0.1);
+  --red: #d32f2f;
+  --yellow: #f9a825;
+  --text: #1a1f2e;
+  --muted: #64748b;
+  --muted2: #94a3b8;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --overlay: rgba(15, 23, 42, 0.35);
+  --grid-line: rgba(0, 100, 180, 0.06);
+  --grid-glow: rgba(0, 119, 182, 0.08);
+  --card-shadow: rgba(0, 80, 160, 0.12);
+  --card-hover-border: rgba(0, 119, 182, 0.35);
+  --toast-bg: #ffffff;
+  --toast-text: #1a1f2e;
+  --toast-border: rgba(0, 0, 0, 0.08);
+  --toggle-track: #dde3ed;
+  --toggle-thumb: #0077b6;
+}
+
+/* Legacy alias used across pages */
+:root,
+html {
+  --white: var(--text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html,
+  body,
+  .cp-wrap,
+  .jr-root,
+  .ed-root,
+  .fp-page,
+  .cp-nav,
+  .jr-card,
+  .ed-sidebar,
+  .ed-toolbar,
+  .ed-terminal {
+    transition:
+      background-color 0.35s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+}
+
+/* Focus rings */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* Shared interactive button press */
+@media (prefers-reduced-motion: no-preference) {
+  .cp-btn-primary:active,
+  .cp-btn-large:active,
+  .jr-btn-primary:active,
+  .ed-btn-run:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}

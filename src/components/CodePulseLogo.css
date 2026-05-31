@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.cpl-root {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.cpl-interactive {
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cpl-interactive:hover {
+  opacity: 0.92;
+}
+
+.cpl-interactive:hover .cpl-mark {
+  box-shadow: 0 0 20px var(--cpl-glow);
+  transform: rotate(-2deg) scale(1.04);
+}
+
+.cpl-interactive:active {
+  transform: scale(0.98);
+}
+
+.cpl-mark-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cpl-mark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  border: 2px solid var(--cpl-accent);
+  background: var(--cpl-mark-bg);
+  color: var(--cpl-accent);
+  text-shadow: 0 0 12px var(--cpl-glow);
+  box-shadow: 0 0 16px var(--cpl-glow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cpl-wordmark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--cpl-wordmark);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cpl-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--cpl-accent);
+  pointer-events: none;
+  transform: scale(1);
+  opacity: 0.6;
+}
+
+.cpl-has-pulse .cpl-mark-wrap {
+  border-radius: 16px;
+}
+
+/* Theme-aware (app pages) */
+.cpl-themed {
+  --cpl-accent: var(--cyan);
+  --cpl-glow: var(--cyan-glow);
+  --cpl-glow-soft: var(--cyan-dim);
+  --cpl-mark-bg: var(--surface);
+  --cpl-wordmark: var(--text);
+}
+
+/* Neon (preloader) */
+.cpl-neon {
+  --cpl-accent: #00ffcc;
+  --cpl-glow: rgba(0, 255, 204, 0.8);
+  --cpl-glow-soft: rgba(0, 255, 204, 0.2);
+  --cpl-mark-bg: #000;
+  --cpl-wordmark: #fff;
+}
+
+/* Sizes */
+.cpl-xs {
+  gap: 0;
+}
+
+.cpl-xs .cpl-mark {
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+  border-radius: 6px;
+  border-width: 1.5px;
+}
+
+.cpl-sm {
+  gap: 8px;
+}
+
+.cpl-sm .cpl-mark {
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+.cpl-sm .cpl-wordmark {
+  font-size: 17px;
+  letter-spacing: 0.1em;
+}
+
+.cpl-md .cpl-mark {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.cpl-md .cpl-wordmark {
+  font-size: 22px;
+}
+
+.cpl-lg .cpl-mark-wrap,
+.cpl-lg .cpl-pulse-ring {
+  width: 64px;
+  height: 64px;
+}
+
+.cpl-lg .cpl-mark {
+  width: 64px;
+  height: 64px;
+  font-size: 28px;
+  border-radius: 16px;
+}
+
+.cpl-lg .cpl-wordmark {
+  font-size: 52px;
+  letter-spacing: 0.12em;
+}
+
+.cpl-lg.cpl-has-pulse .cpl-pulse-ring {
+  border-radius: 16px;
+}
+
+/* Join page typing accent on wordmark */
+.cpl-wordmark-typing .cpl-pulse-part {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: cplTypeReveal 1s 0.3s steps(3, end) both;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes cplTypeReveal {
+  from { width: 0; }
+  to { width: 2.4ch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cpl-interactive:hover .cpl-mark {
+    transform: none;
+  }
+
+  .cpl-wordmark-typing .cpl-pulse-part {
+    animation: none;
+    width: auto;
+  }
+}
