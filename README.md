@@ -332,7 +332,7 @@ MIT — see [LICENSE](LICENSE)
 [ OK ] session terminated
 [ OK ] workspace saved
 [ OK ] peers disconnected
-       PULSE OFFLINE.
+       PULSE OFFLINE..
 ```
 
 <img src="https://capsule-render.vercel.app/api?type=soft&color=0d1117,0a3d2e,0d1117&height=100&section=footer&animation=twinkling" width="100%"/>
